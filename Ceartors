@@ -1,0 +1,446 @@
+<!-- Font Awesome for Icons -->
+<link href='//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet' />
+
+<!-- 🌟 MULTI-LIST ANIME PAGE -->
+<div class="multi-list-container" data-theme="default">
+
+    <!-- 🔘 SWITCH BUTTONS -->
+    <div class="list-switch">
+        <button class="list-btn active" onclick="switchList('tadb', event)">TADB LIST</button>
+        <button class="list-btn" onclick="switchList('telchi', event)">TELCHI LIST</button>
+        <button class="list-btn" onclick="switchList('professor', event)">PROFESSOR LIST</button>
+        <button class="list-btn" onclick="switchList('rae', event)">RAE LIST</button>
+    </div>
+
+    <!-- 👤 AUTHOR CARD -->
+    <div id="authorCard" class="author-card">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjMyJdgsufmZrNxfCdxv9X87MdndtuZP1mSaXtiRxeTUVEYKWRzMn6y1ZnrrZ2SEDuyidYa2M4RvY0uAi0KrP-evLJYsv0_YbGAXz3sT1DafCucVsYIq8BNk_9MNeRmvD6nIsFGKNbHISTfX0h4iqR0AecbKy8vl7WR5Y-kJT5-9PjbHTTL5wKIV495Jc8=s16000"
+            alt="TADB LIST" class="author-img">
+        <div class="author-info">
+            <h3><b>TADB</b></h3>
+            <h3>(TELUGU ANIME DATABASE)</h3>
+            <div class="author-links">
+                <a href="https://www.instagram.com/teluguanime.db/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/@mugentales" target="_blank">YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🌟 TITLE -->
+    <h2 id="listTitle" class="top-anime-title">🏆 Wellcome to Suggestion List </h2>
+
+    <!-- 🌟 ANIME LIST -->
+    <div id="animeList" class="top-anime-list">
+        <a class="anime-row" target="_blank">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEix4uXDCY-8RlCA-vDRGhfJDLu0bG8fUVA6XSbppB4NmrdzJmTPmanPIKfF_y19oJQG6oDEh-9Hal7loPlqSWxqfkjo45Niwhr9Q0AHE9LE3NJA8fn_efn6SAwB4LnXe8JeFlhaLDFWD-nTsnQd72ivVY2HxtC_CZjzopkyMJFA-oyrIMtW-4rh1gJN_5U/s16000/website.jpg"
+                alt="Sample">
+            <div class="anime-info">
+                <h3>Telugu Dub List</h3>
+                <p>Watch Your Favourate Content Creator Suggestion List</p>
+                <p>Click Top Swithes To See</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- 💅 CSS -->
+<style>
+    /* Theme Variables */
+    :root[data-theme=default] {
+        --background-color: #0A1224;
+        --text-color: #fff;
+        --text-color-subtle: #aaa;
+        --card-background: #111827;
+        --card-border: #1e293b;
+        --card-hover-background: rgba(19, 57, 120, 0.15);
+        --primary-color: #133978;
+        --title-color: #ffffff;
+        --author-info-color: #ffffff;
+        --anime-title-color: #ffffff;
+        --anime-sub-info-color: #aaa;
+        --author-img-border: #fff;
+    }
+
+    :root[data-theme="light"] {
+        --background-color: #F5F7FA;
+        --text-color: #0B0B0B;
+        --text-color-subtle: #000000;
+        --card-background: #FFFFFF;
+        --card-border: #133978;
+        --card-hover-background: #F5F7FA;
+        --primary-color: #133978;
+        --title-color: #133978;
+        --author-info-color: #133978;
+        --anime-title-color: #133978;
+        --anime-sub-info-color: #000000;
+        --author-img-border: #133978;
+    }
+
+    .multi-list-container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+        text-align: center;
+        background: var(--background-color);
+        color: var(--text-color);
+    }
+
+    /* 🔘 SWITCH BUTTONS */
+    .list-switch {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+        margin-bottom: 25px;
+        justify-content: center;
+    }
+
+    .list-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--card-background);
+        border: 2px solid var(--card-border);
+        color: var(--text-color);
+        border-radius: 10px;
+        padding: 10px 0;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .list-btn.active {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: #fff;
+        transform: scale(1.05);
+        box-shadow: 0 0 8px rgba(19, 57, 120, 0.5);
+    }
+
+    /* 👤 AUTHOR CARD */
+    .author-card {
+        max-width: 300px;
+        margin: 0 auto 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        background: var(--card-background);
+        border: 2px solid var(--card-border);
+        border-radius: 14px;
+        padding: 15px;
+        color: var(--text-color);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    :root[data-theme="light"] .author-card {
+        box-shadow: 0 0 10px rgba(19, 57, 120, 0.1);
+    }
+
+    .author-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--primary-color);
+        background: var(--card-hover-background);
+    }
+
+    .author-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--author-img-border);
+    }
+
+    .author-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .author-info h3 {
+        margin: 5px 0;
+        font-size: 1rem;
+        color: var(--author-info-color);
+        font-weight: 700;
+    }
+
+    .author-links a {
+        color: var(--text-color);
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin: 0 5px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none;
+    }
+
+    .author-links a:hover {
+        color: var(--primary-color);
+    }
+
+    /* 🌟 ANIME LIST */
+    .top-anime-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: var(--title-color);
+    }
+
+    .top-anime-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    @media (min-width: 768px) {
+        .top-anime-list {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .anime-row {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: var(--card-background);
+        border: 2px solid var(--card-border);
+        border-radius: 14px;
+        padding: 10px 15px;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    :root[data-theme="light"] .anime-row {
+        box-shadow: 0 0 10px rgba(19, 57, 120, 0.1);
+    }
+
+    .anime-row:hover {
+        transform: translateY(-3px);
+        border-color: var(--primary-color);
+        background: var(--card-hover-background);
+    }
+
+    :root[data-theme="light"] .anime-row:hover {
+        box-shadow: 0 0 20px rgba(19, 57, 120, 0.3);
+    }
+
+    .anime-row img {
+        width: 70px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid var(--card-border);
+    }
+
+    :root[data-theme="light"] .anime-row img {
+        border-color: var(--primary-color);
+    }
+
+    .anime-info h3 {
+        margin: 0 0 6px;
+        font-size: 1rem;
+        color: var(--anime-title-color);
+        font-weight: 700;
+    }
+
+    .anime-info p {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--anime-sub-info-color);
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 600px) {
+        .author-card {
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .anime-row img {
+            width: 60px;
+            height: 85px;
+        }
+
+        .top-anime-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- ⚙️ SCRIPT -->
+<script>
+    function switchList(list, event) {
+        document.querySelectorAll('.list-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const authorCard = document.getElementById('authorCard');
+        const listTitle = document.getElementById('listTitle');
+        const animeList = document.getElementById('animeList');
+
+        if (list === 'tadb') {
+            authorCard.innerHTML = `
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjMyJdgsufmZrNxfCdxv9X87MdndtuZP1mSaXtiRxeTUVEYKWRzMn6y1ZnrrZ2SEDuyidYa2M4RvY0uAi0KrP-evLJYsv0_YbGAXz3sT1DafCucVsYIq8BNk_9MNeRmvD6nIsFGKNbHISTfX0h4iqR0AecbKy8vl7WR5Y-kJT5-9PjbHTTL5wKIV495Jc8=s16000" class="author-img">
+      <div class="author-info">
+        <h3><b>TADB LIST</b></h3>
+        <h3>(Founder)</h3>
+        <div class="author-links">
+          <a href="https://www.instagram.com/teluguanime.db/" target="_blank">Instagram</a>
+          <a href="https://www.youtube.com/@Mugentales" target="_blank">YouTube</a>
+        </div>
+      </div>`;
+            listTitle.textContent = "🏆 TADB Telugu List";
+            animeList.innerHTML = `
+      <a class="anime-row" href="#" target="_blank">
+    <img src="https://u.livechart.me/anime_visuals/local_version/1555/image/6fd1935085eec0022d2c9121716374d4.webp/large.jpg">
+    <div class="anime-info"><h3>Demon Slayer - Season 1</h3><h3>Anime-times</h3><p>⭐ 8.7 (IMDb) · 26 Episodes · Action · Adventure</p></div>
+  </a>
+  <a class="anime-row" href="#" target="_blank">
+    <img src="https://u.livechart.me/anime_visuals/local_version/14038/image/a1eceb04646ccd4d25c747fe7e85b302.webp/large.jpg">
+    <div class="anime-info"><h3>Death Note</h3><h3>Anime-times</h3><p>⭐ 9.0 (IMDb) · 37 Episodes · Mystery · Thriller</p></div>
+  </a>
+  <a class="anime-row" href="#" target="_blank">
+    <img src="https://u.livechart.me/anime_visuals/local_version/10337/image/a4be70dfa4ae919f0c2470e1bbffb0b8.webp/large.jpg">
+    <div class="anime-info"><h3>Dandadan</h3><h3>Crunchyroll</h3><p>⭐ 8.3 (IMDb) · 24 Episodes · Action · Comedy</p></div>
+  </a>
+  <a class="anime-row" href="#" target="_blank">
+    <img src="https://u.livechart.me/anime/visual/6875/image/00524cc5d2d7dd8506da05bd4d10d38e.jfif/large.jpg">
+    <div class="anime-info"><h3>Spy x Family</h3><h3>Crunchyroll</h3><p>⭐ 8.8 (IMDb) · 25 Episodes · Action · Comedy</p></div>
+  </a>
+  <a class="anime-row" href="#" target="_blank">
+    <img src="https://u.livechart.me/anime_visuals/local_version/3631/image/465d1f01d81532ff5d9c6947d0b28613.png/large.jpg">
+    <div class="anime-info"><h3>Haikyu!!</h3><h3>Crunchyroll</h3><p>⭐ 8.9 (IMDb) · 25 Episodes · Sports · Drama</p></div>
+  </a>
+  <a class="anime-row" href="#" target="_blank">
+    <img src="https://image.tmdb.org/t/p/original/wmrk6mLWDjz3jb210y3QisXUAcr.jpg">
+    <div class="anime-info"><h3>Dragon Ball Daima</h3><h3>Crunchyroll</h3><p>⭐ 8.6 (IMDb) · 153 Episodes · Action · Adventure</p></div>
+  </a>`;
+        }
+        else if (list === 'telchi') {
+            authorCard.innerHTML = `
+      <img src="https://i.pinimg.com/736x/b5/7b/be/b57bbe9a012d059160ec0aceff2df802.jpg" class="author-img">
+      <div class="author-info">
+        <h3><b>Telchi Anime</b></h3>
+        <h3>(Content Creator)</h3>
+        <div class="author-links">
+          <a href="https://www.instagram.com/telchianime/" target="_blank">Instagram</a>
+          <a href="https://www.youtube.com/@TelchiAnimeofficial" target="_blank">YouTube</a>
+        </div>
+      </div>`;
+            listTitle.textContent = "🏆 Telchi Telugu List";
+            animeList.innerHTML = `
+      <a class="anime-row" href="#" target="_blank">
+  <img src="https://u.livechart.me/anime_visuals/local_version/10337/image/a4be70dfa4ae919f0c2470e1bbffb0b8.webp/large.jpg">
+  <div class="anime-info"><h3>Dandadan</h3><h3>Crunchyroll</h3><p>⭐ 8.3 (IMDb) · 24 Episodes · Action · Comedy</p></div>
+</a>
+<a class="anime-row" href="#" target="_blank">
+  <img src="https://u.livechart.me/anime/visual/6884/image/7963459087c881bb8db7eb20830a4ef8.png/large.jpg">
+  <div class="anime-info"><h3>Black Butler Pubilc School</h3><h3>Crunchyroll</h3><p>⭐ 8.2 (IMDb) · 36 Episodes · Mystery · Supernatural</p></div>
+</a>
+<a class="anime-row" href="#" target="_blank">
+  <img src="https://u.livechart.me/anime/visual/6875/image/00524cc5d2d7dd8506da05bd4d10d38e.jfif/large.jpg">
+  <div class="anime-info"><h3>SPY x FAMILY</h3><h3>Crunchyroll</h3><p>⭐ 8.8 (IMDb) · 25 Episodes · Action · Comedy</p></div>
+</a>
+<a class="anime-row" href="#" target="_blank">
+  <img src="https://u.livechart.me/anime_visuals/local_version/14169/image/1c76fdcf1cdd76892b407e54f7fdb542.webp/large.jpg">
+  <div class="anime-info"><h3>Gachiakuta</h3><h3>Crunchyroll</h3><p>⭐ 8.1 (IMDb) · 12 Episodes · Adventure · Comedy</p></div>
+</a>
+<a class="anime-row" href="#" target="_blank">
+  <img src="https://u.livechart.me/anime_visuals/local_version/2981/image/80070608f5d264e77b0bb4f1fe24096b.webp/large.jpg">
+  <div class="anime-info"><h3>Vinland Saga</h3><h3>Crunchyroll</h3><p>⭐ 8.9 (IMDb) · 24 Episodes · Action · Historical</p></div>
+</a>
+<a class="anime-row" href="#" target="_blank">
+  <img src="https://u.livechart.me/anime_visuals/local_version/213/image/da11f281fa013322c52cf32ae7663437.jpeg/large.jpg">
+  <div class="anime-info"><h3>Ranking of Kings</h3><h3>Crunchyroll</h3><p>⭐ 8.7 (IMDb) · 23 Episodes · Fantasy · Adventure</p></div>
+</a>
+`;
+        }
+        else if (list === 'professor') {
+            authorCard.innerHTML = `
+      <img src="https://i.pinimg.com/736x/5c/7e/d8/5c7ed813dbdb2ec4a76e96e407a7e6c7.jpg" class="author-img">
+      <div class="author-info">
+        <h3><b>Professor</b></h3>
+        <h3>(TADB Editor)</h3>
+        <div class="author-links">
+          <a href="https://instagram.com/" target="_blank">Instagram</a>
+        </div>
+      </div>`;
+            listTitle.textContent = "🏆 Professor Telugu List";
+            animeList.innerHTML = `
+      <a class="anime-row" href="#" target="_blank">
+        <img src="https://wallpaperaccess.com/full/9970042.jpg">
+        <div class="anime-info"><h3>ONE PIECE</h3><p>⭐ 9.1 (IMDb) · Ongoing · Adventure · Action</p></div>
+      </a>`;
+        }
+        else if (list === 'rae') {
+            authorCard.innerHTML = `
+      <img src="https://i.pinimg.com/736x/b8/41/a3/b841a3b8c2e8eb4adce66e3de22f4a2e.jpg" class="author-img">
+      <div class="author-info">
+        <h3><b>Rae</b></h3>
+        <h3>(Anime Recommender)</h3>
+        <div class="author-links">
+          <a href="https://instagram.com/" target="_blank">Instagram</a>
+        </div>
+      </div>`;
+            listTitle.textContent = "🏆 Rae Telugu List";
+            animeList.innerHTML = `
+      <a class="anime-row" href="#" target="_blank">
+        <img src="https://wallpaperaccess.com/full/9929920.jpg">
+        <div class="anime-info"><h3>NARUTO</h3><p>⭐ 8.7 (IMDb) · 220 Episodes · Action · Adventure</p></div>
+      </a>`;
+        }
+    }
+
+    // Theme toggle functionality
+    function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'default' : 'light';
+
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        localStorage.setItem('themeOverride', 'true');
+    }
+
+    // Auto-detect system theme preference
+    function getSystemTheme() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            return 'light';
+        }
+        return 'default';
+    }
+
+    // Load theme on page load
+    document.addEventListener('DOMContentLoaded', function () {
+        const themeOverride = localStorage.getItem('themeOverride');
+        let theme;
+
+        if (themeOverride === 'true') {
+            theme = localStorage.getItem('theme') || 'default';
+        } else {
+            theme = getSystemTheme();
+        }
+
+        document.documentElement.setAttribute('data-theme', theme);
+    });
+
+    // Listen for system theme changes
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
+            const themeOverride = localStorage.getItem('themeOverride');
+
+            if (themeOverride !== 'true') {
+                const newTheme = e.matches ? 'light' : 'default';
+                document.documentElement.setAttribute('data-theme', newTheme);
+            }
+        });
+    }
+</script>
+

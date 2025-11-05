@@ -1,0 +1,120 @@
+/* Simple Light/Dark Theme System */
+
+/* Default Dark Theme */
+:root {
+    --bg-primary: linear-gradient(135deg, #0a1929 0%, #0d2238 50%, #133978 100%);
+    --bg-secondary: rgba(10, 25, 41, 0.8);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --accent-color: #4a90e2;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --bg-primary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+    --bg-secondary: rgba(248, 250, 252, 0.9);
+    --text-primary: #1e293b;
+    --text-secondary: rgba(30, 41, 59, 0.8);
+    --accent-color: #3b82f6;
+}
+
+/* Mobile Theme Toggle in Menu */
+.mobile-theme-toggle {
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+}
+
+.mobile-theme-btn {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    color: var(--text-primary);
+}
+
+.mobile-theme-btn:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.mobile-theme-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.mobile-theme-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Apply theme to body */
+body {
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Navigation */
+.navbar {
+    background: var(--bg-secondary) !important;
+}
+
+/* Light mode specific adjustments */
+[data-theme="light"] body {
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .navbar {
+    background: var(--bg-secondary) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .nav-brand h2,
+[data-theme="light"] .nav-brand a {
+    color: var(--accent-color) !important;
+}
+
+[data-theme="light"] .hero-content h1 {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .hero-content p {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .movie-card {
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-theme="light"] .movie-title {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .section-header h2 {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .movies-section,
+[data-theme="light"] .season-calendar-section {
+    background: var(--bg-secondary) !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .theme-toggle-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .theme-icon {
+        font-size: 1rem;
+    }
+}
