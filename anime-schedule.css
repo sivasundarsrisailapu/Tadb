@@ -1,0 +1,588 @@
+/* Anime Schedule Page Styles - Original Theme */
+
+/* Main Content */
+.schedule-main {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+    background: #0a1929;
+    color: #ffffff;
+}
+
+/* Header Section */
+.schedule-header {
+    background: linear-gradient(135deg, rgba(19, 57, 120, 0.1) 0%, rgba(10, 25, 41, 0.2) 100%);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    background: linear-gradient(45deg, #133978, #4a90e2, #87ceeb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header-content p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Filter Section */
+.filter-section {
+    background: rgba(10, 25, 41, 0.3);
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.filter-controls {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 150px;
+}
+
+.filter-group label {
+    color: #4a90e2;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.filter-select {
+    background: rgba(10, 25, 41, 0.8);
+    border: 2px solid rgba(74, 144, 226, 0.4);
+    border-radius: 8px;
+    padding: 0.75rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.filter-select option {
+    background: #0a1929;
+    color: #ffffff;
+}
+
+/* Schedule Content */
+.schedule-content {
+    padding: 2rem 0;
+}
+
+.schedule-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 15px;
+}
+
+.schedule-heading {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #133978;
+}
+
+/* Schedule Card - Original Design */
+.schedule-card {
+    background: rgba(19, 57, 120, 0.1);
+    border: 2px solid rgba(19, 57, 120, 0.3);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.schedule-card:hover {
+    background: rgba(19, 57, 120, 0.2);
+    border-color: #133978;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(19, 57, 120, 0.4);
+}
+
+.card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.schedule-card img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.schedule-details {
+    flex: 1;
+    min-width: 200px;
+}
+
+.schedule-details h3 {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.tag.Crunchyroll {
+    background: #f37021;
+}
+
+.tag.Telugu {
+    background: #00aaff;
+}
+
+.tag.Series {
+    background: #555;
+}
+
+.tag.SonyYAY {
+    background: #ff6b35;
+}
+
+.tag.TVShow {
+    background: #9333ea;
+}
+
+.release-time {
+    font-size: 0.8rem;
+    color: #ccc;
+    margin-bottom: 8px;
+}
+
+.episode-date-time {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.date-badge {
+    background: #133978;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.time-badge {
+    background: #f7ef47;
+    color: #0b1220;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.status-badge {
+    background: #133978;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.countdown {
+    font-size: 0.85rem;
+    color: #f7ef47;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #133978;
+    color: #fff;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #0f2a5f;
+    transform: translateY(-1px);
+}
+
+/* Episode boxes */
+.episode-box {
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin: 4px;
+    text-align: center;
+    cursor: pointer;
+    min-width: 45px;
+    transition: 0.2s;
+    border: 2px solid #fff;
+}
+
+.episode-box:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.episode-box.current {
+    background: #133978;
+    color: #fff;
+    border: 2px solid #133978;
+}
+
+.episode-box.current:hover {
+    background: #0f2a5f;
+}
+
+.episode-box.next-ep {
+    background: #f37021;
+    color: #fff;
+    border: 2px solid #f37021;
+}
+
+.episode-box.next-ep:hover {
+    background: #d85a1a;
+}
+
+.episode-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.next-episode-label {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 25, 41, 0.98);
+    z-index: 1001;
+    padding: 2rem;
+}
+
+.mobile-menu-container {
+    margin-top: 4rem;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(74, 144, 226, 0.3);
+}
+
+.mobile-menu-header h3 {
+    color: #4a90e2;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    color: #4a90e2;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.mobile-menu-close svg {
+    width: 24px;
+    height: 24px;
+}
+
+.mobile-menu-close:hover {
+    background: rgba(74, 144, 226, 0.1);
+    transform: scale(1.05);
+}
+
+.mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(74, 144, 226, 0.1);
+    border-radius: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    background: rgba(74, 144, 226, 0.3);
+    border-color: rgba(74, 144, 226, 0.5);
+    transform: translateX(5px);
+}
+
+.mobile-nav-icon {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    flex-shrink: 0;
+}
+
+.mobile-nav-link span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Mobile Search Styles */
+.mobile-search-overlay {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 25, 41, 0.98);
+    z-index: 1001;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(74, 144, 226, 0.3);
+}
+
+.mobile-search-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-search-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(74, 144, 226, 0.4);
+    border-radius: 25px;
+    padding: 0.75rem 1rem;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.mobile-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.mobile-search-close {
+    background: none;
+    border: none;
+    color: #4a90e2;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.mobile-search-close svg {
+    width: 20px;
+    height: 20px;
+}
+
+.mobile-search-close:hover {
+    background: rgba(74, 144, 226, 0.1);
+    transform: scale(1.05);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #4a90e2;
+}
+
+.empty-state p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(74, 144, 226, 0.3);
+    border-top: 3px solid #4a90e2;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+
+    .filter-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .filter-group {
+        min-width: auto;
+    }
+
+    .schedule-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .schedule-card {
+        padding: 1.25rem;
+    }
+
+    .schedule-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-header {
+        padding: 2rem 0;
+    }
+
+    .filter-section {
+        padding: 1.5rem 0;
+    }
+
+    .schedule-content {
+        padding: 2rem 0;
+    }
+
+    .schedule-card {
+        padding: 1rem;
+    }
+
+    .schedule-card-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+}
+
+/* Dark Theme Compatibility */
+body.dark-theme .schedule-card {
+    background: rgba(13, 34, 56, 0.8);
+}
+
+body.dark-theme .filter-select {
+    background: rgba(13, 34, 56, 0.9);
+}
+
+/* Animation for card entrance */
+.schedule-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.schedule-card:nth-child(1) { animation-delay: 0.1s; }
+.schedule-card:nth-child(2) { animation-delay: 0.2s; }
+.schedule-card:nth-child(3) { animation-delay: 0.3s; }
+.schedule-card:nth-child(4) { animation-delay: 0.4s; }
+.schedule-card:nth-child(5) { animation-delay: 0.5s; }
+.schedule-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

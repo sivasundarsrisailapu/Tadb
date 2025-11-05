@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telugu Anime Database (TADB)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="mobile-menu-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+            <div class="nav-brand">
+                <h2>TADB</h2>
+            </div>
+
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9,22 9,12 15,12 15,22" />
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="#anime" class="nav-link" data-section="anime">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2 2 4-4" />
+                    </svg>
+                    <span>Anime</span>
+                </a>
+                <a href="#movies" class="nav-link" data-section="movies">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="18" x="3" y="3" rx="2" />
+                        <path d="m9 9 5 3-5 3v-6Z" />
+                    </svg>
+                    <span>Movies</span>
+                </a>
+                <a href="#series" class="nav-link" data-section="series">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="20" height="15" x="2" y="3" rx="2" ry="2" />
+                        <line x1="8" x2="16" y1="21" y2="21" />
+                        <line x1="12" x2="12" y1="17" y2="21" />
+                    </svg>
+                    <span>Series</span>
+                </a>
+                <a href="#schedule" class="nav-link" data-section="schedule">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                        <line x1="16" x2="16" y1="2" y2="6" />
+                        <line x1="8" x2="8" y1="2" y2="6" />
+                        <line x1="3" x2="21" y1="10" y2="10" />
+                    </svg>
+                    <span>Schedule</span>
+                </a>
+                <a href="cast-crew.html" class="nav-link" data-section="voice-artists">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                        <line x1="12" x2="12" y1="19" y2="22" />
+                    </svg>
+                    <span>Voice Artists</span>
+                </a>
+                <a href="#creators" class="nav-link" data-section="creators">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34" />
+                        <polygon points="18,2 22,6 12,16 8,16 8,12 18,2" />
+                    </svg>
+                    <span>Creators</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <path d="m12 17 .01 0" />
+                    </svg>
+                    <span>About</span>
+                </a>
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search anime..." class="search-input">
+                <button class="search-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg>
+                </button>
+            </div>
+            <button class="mobile-search-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-search-overlay">
+            <div class="mobile-search-container">
+                <input type="text" placeholder="Search anime..." class="mobile-search-input">
+                <button class="mobile-search-close">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m18 6-12 12" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu-overlay">
+            <div class="mobile-menu-container">
+                <div class="mobile-menu-header">
+                    <h3>Menu</h3>
+                    <button class="mobile-menu-close">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m18 6-12 12" />
+                            <path d="m6 6 12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mobile-menu-links">
+                    <a href="#home" class="mobile-nav-link active" data-section="home">
+                        <svg class="mobile-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <polyline points="9,22 9,12 15,12 15,22" />
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    <a href="#anime" class="mobile-nav-link" data-section="anime">
+                        <svg class="mobile-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M8 12l2 2 4-4" />
+                        </svg>
+                        <span>Anime</span>
+                    </a>
+                    <a href="#movies" class="mobile-nav-link" data-section="movies">
+                        <svg class="mobile-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect width="18" height="18" x="3" y="3" rx="2" />
+                            <path d="m9 9 5 3-5 3v-6Z" />
+                        </svg>
+                        <span>Movies</span>
+                    </a>
+                    <a href="#series" class="mobile-nav-link" data-section="series">
+                        <svg class="mobile-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect width="20" height="15" x="2" y="3" rx="2" ry="2" />
+                            <line x1="8" x2="16" y1="21" y2="21" />
+                            <line x1="12" x2="12" y1="17" y2="21" />
+                        </svg>
+                        <span>Series</span>
+                    </a>
+                    <a href="#schedule" class="mobile-nav-link" data-section="schedule">
+                        <svg class="mobile-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                            <line x1="16" x2="16" y1="2" y2="6" />
+                            <line x1="8" x2="8" y1="2" y2="6" />
+                            <line x1="3" x2="21" y1="10" y2="10" />
+                        </svg>
+                        <span>Schedule</span>
+                    </a>
+                    <a href="cast-crew.html" class="mobile-nav-link" data-section="voice-artists">
+                        <svg class="mobile-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                            <line x1="12" x2="12" y1="19" y2="22" />
+                        </svg>
+                        <span>Voice Artists</span>
+                    </a>
+                    <a href="#creators" class="mobile-nav-link" data-section="creators">
+                        <svg class="mobile-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34" />
+                            <polygon points="18,2 22,6 12,16 8,16 8,12 18,2" />
+                        </svg>
+                        <span>Creators</span>
+                    </a>
+                    <a href="#about" class="mobile-nav-link" data-section="about">
+                        <svg class="mobile-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                            <path d="m12 17 .01 0" />
+                        </svg>
+                        <span>About</span>
+                    </a>
+                    <div class="mobile-theme-toggle">
+                        <button class="mobile-theme-btn" id="mobileThemeToggle">
+                            <svg class="mobile-theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                            <span class="mobile-theme-text">Dark Mode</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Telugu <span class="highlight-blue">Anime</span> Database</h1>
+                <p>Your ultimate destination for Telugu dubbed anime content. Discover, watch, and enjoy the best anime
+                    series and movies in Telugu language.</p>
+                <div class="hero-buttons">
+                    <a href="#anime" class="btn-primary">Explore Anime</a>
+                    <a href="#movies" class="btn-secondary">Browse Collection</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">150+</span>
+                        <span class="hero-stat-label">Telugu Dubs</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">50+</span>
+                        <span class="hero-stat-label">Voice Artists</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">24/7</span>
+                        <span class="hero-stat-label">Streaming</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Movie Cards Section -->
+    <section class="movies-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Posts</h2>
+            </div>
+            <div class="movies-grid" id="moviesGrid">
+                <!-- Movie cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Pagination Section -->
+    <section class="pagination-section">
+        <div class="container">
+            <div class="pagination">
+                <button class="page-btn active" data-page="1">1</button>
+                <button class="page-btn" data-page="2">2</button>
+                <button class="page-btn" data-page="3">3</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Season Calendar Section -->
+    <section class="season-calendar-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Season Calendar</h2>
+            </div>
+            <div class="seasons-grid">
+                <div class="season-card spring">
+                    <div class="season-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="20" r="8" fill="#4a90e2" />
+                            <path d="M50 28 L50 45 M42 35 L58 35" stroke="#4a90e2" stroke-width="3"
+                                stroke-linecap="round" />
+                            <circle cx="35" cy="60" r="12" fill="#87ceeb" opacity="0.7" />
+                            <circle cx="65" cy="65" r="10" fill="#87ceeb" opacity="0.7" />
+                            <path d="M20 80 Q30 70 40 80 Q50 70 60 80 Q70 70 80 80" stroke="#4a90e2" stroke-width="2"
+                                fill="none" />
+                        </svg>
+                    </div>
+                    <h3>Spring</h3>
+                    <p>March - May</p>
+                </div>
+
+                <div class="season-card summer">
+                    <div class="season-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="15" fill="#ffd700" />
+                            <g stroke="#ffd700" stroke-width="3" stroke-linecap="round">
+                                <line x1="50" y1="10" x2="50" y2="20" />
+                                <line x1="50" y1="80" x2="50" y2="90" />
+                                <line x1="10" y1="50" x2="20" y2="50" />
+                                <line x1="80" y1="50" x2="90" y2="50" />
+                                <line x1="25" y1="25" x2="32" y2="32" />
+                                <line x1="68" y1="68" x2="75" y2="75" />
+                                <line x1="75" y1="25" x2="68" y2="32" />
+                                <line x1="32" y1="68" x2="25" y2="75" />
+                            </g>
+                        </svg>
+                    </div>
+                    <h3>Summer</h3>
+                    <p>June - August</p>
+                </div>
+
+                <div class="season-card fall">
+                    <div class="season-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30 20 Q35 15 40 20 Q45 25 50 20 Q55 15 60 20 Q65 25 70 20" stroke="#ff8c42"
+                                stroke-width="2" fill="none" />
+                            <ellipse cx="35" cy="40" rx="8" ry="12" fill="#ff8c42" transform="rotate(15 35 40)" />
+                            <ellipse cx="55" cy="45" rx="6" ry="10" fill="#e74c3c" transform="rotate(-20 55 45)" />
+                            <ellipse cx="45" cy="65" rx="7" ry="11" fill="#d35400" transform="rotate(30 45 65)" />
+                            <ellipse cx="65" cy="70" rx="5" ry="8" fill="#ff8c42" transform="rotate(-10 65 70)" />
+                            <path d="M20 85 Q40 80 60 85 Q80 80 90 85" stroke="#8b4513" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <h3>Fall</h3>
+                    <p>September - November</p>
+                </div>
+
+                <div class="season-card winter">
+                    <div class="season-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#87ceeb" stroke-width="2" fill="none">
+                                <line x1="50" y1="20" x2="50" y2="80" />
+                                <line x1="20" y1="50" x2="80" y2="50" />
+                                <line x1="30" y1="30" x2="70" y2="70" />
+                                <line x1="70" y1="30" x2="30" y2="70" />
+                                <circle cx="50" cy="35" r="3" fill="#87ceeb" />
+                                <circle cx="50" cy="50" r="3" fill="#87ceeb" />
+                                <circle cx="50" cy="65" r="3" fill="#87ceeb" />
+                                <circle cx="35" cy="50" r="2" fill="#87ceeb" />
+                                <circle cx="65" cy="50" r="2" fill="#87ceeb" />
+                            </g>
+                        </svg>
+                    </div>
+                    <h3>Winter</h3>
+                    <p>December - February</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content You Might Like Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Content You Might Like</h2>
+            </div>
+            <div class="content-stats-grid">
+                <a href="#anime" class="stat-card telugu-dubs">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="30" width="60" height="40" rx="5" fill="none" stroke="#4a90e2"
+                                stroke-width="3" />
+                            <circle cx="35" cy="45" r="8" fill="#4a90e2" />
+                            <circle cx="65" cy="45" r="8" fill="#4a90e2" />
+                            <path d="M25 55 Q35 65 50 55 Q65 65 75 55" stroke="#4a90e2" stroke-width="2" fill="none" />
+                            <rect x="15" y="25" width="70" height="50" rx="8" fill="none" stroke="#87ceeb"
+                                stroke-width="2" />
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3>150+</h3>
+                        <p>Telugu Dubs <span class="link-arrow">→</span></p>
+                    </div>
+                </a>
+
+                <a href="cast-crew.html" class="stat-card production-team">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="35" cy="30" r="12" fill="#4a90e2" />
+                            <circle cx="65" cy="30" r="12" fill="#4a90e2" />
+                            <circle cx="50" cy="55" r="12" fill="#87ceeb" />
+                            <path d="M20 70 Q35 60 50 70 Q65 60 80 70" stroke="#4a90e2" stroke-width="3" fill="none" />
+                            <line x1="35" y1="42" x2="50" y2="43" stroke="#133978" stroke-width="2" />
+                            <line x1="65" y1="42" x2="50" y2="43" stroke="#133978" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3>50+</h3>
+                        <p>Production Team <span class="link-arrow">→</span></p>
+                    </div>
+                </a>
+
+                <a href="creators.html" class="stat-card creators-list">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="25" y="20" width="50" height="60" rx="5" fill="none" stroke="#4a90e2"
+                                stroke-width="3" />
+                            <line x1="35" y1="35" x2="65" y2="35" stroke="#87ceeb" stroke-width="2" />
+                            <line x1="35" y1="45" x2="60" y2="45" stroke="#87ceeb" stroke-width="2" />
+                            <line x1="35" y1="55" x2="55" y2="55" stroke="#87ceeb" stroke-width="2" />
+                            <line x1="35" y1="65" x2="65" y2="65" stroke="#87ceeb" stroke-width="2" />
+                            <circle cx="15" cy="25" r="8" fill="#133978" />
+                            <path d="M10 33 L20 33" stroke="#133978" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Creators</h3>
+                        <p>List <span class="link-arrow">→</span></p>
+                    </div>
+                </a>
+
+                <a href="anime-schedule.html" class="stat-card anime-schedule">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="25" width="60" height="50" rx="5" fill="none" stroke="#4a90e2"
+                                stroke-width="3" />
+                            <line x1="30" y1="15" x2="30" y2="35" stroke="#87ceeb" stroke-width="3" />
+                            <line x1="70" y1="15" x2="70" y2="35" stroke="#87ceeb" stroke-width="3" />
+                            <line x1="25" y1="40" x2="75" y2="40" stroke="#133978" stroke-width="2" />
+                            <circle cx="35" cy="50" r="3" fill="#4a90e2" />
+                            <circle cx="50" cy="50" r="3" fill="#4a90e2" />
+                            <circle cx="65" cy="50" r="3" fill="#4a90e2" />
+                            <circle cx="35" cy="60" r="3" fill="#87ceeb" />
+                            <circle cx="50" cy="60" r="3" fill="#87ceeb" />
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Anime</h3>
+                        <p>Schedule <span class="link-arrow">→</span></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section class="disclaimer-section">
+        <div class="container">
+            <div class="disclaimer-content">
+                <div class="disclaimer-icon">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="#4a90e2" stroke-width="4" />
+                        <circle cx="50" cy="35" r="3" fill="#4a90e2" />
+                        <line x1="50" y1="45" x2="50" y2="70" stroke="#4a90e2" stroke-width="4"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="disclaimer-text">
+                    <h2>Important Disclaimer</h2>
+                    <div class="disclaimer-desktop">
+                        <p>Telugu Anime Database (TADB) is a fan-made platform dedicated to promoting Telugu dubbed
+                            anime content. We do not host, store, or distribute any copyrighted material. All anime
+                            content, images, and related materials are the property of their respective owners and
+                            creators.</p>
+                        <p>This website serves as an informational database and community platform for Telugu anime
+                            enthusiasts. We respect intellectual property rights and encourage users to support official
+                            releases and licensed distributors.</p>
+                    </div>
+                    <div class="disclaimer-mobile">
+                        <p>🎌 TADB is a fan community for Telugu anime lovers! We're here to celebrate and share
+                            information about your favorite anime series dubbed in Telugu.</p>
+                        <p>📺 We don't host any videos or files - just info, reviews, and recommendations to help you
+                            discover amazing Telugu anime content!</p>
+                        <p>💝 All anime belongs to their amazing creators. We're just fans sharing the love for Telugu
+                            dubbing!</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section label-tags-section">
+                    <h4>Streaming Platforms</h4>
+                    <div class="platform-tags">
+                        <button class="platform-tag">JioHotstar</button>
+                        <button class="platform-tag">Crunchyroll</button>
+                        <button class="platform-tag">Anime Times</button>
+                        <button class="platform-tag">Netflix</button>
+                        <button class="platform-tag">Sony yay</button>
+                        <button class="platform-tag">Cartoon Network</button>
+                        <button class="platform-tag">Etv Plus</button>
+                        <button class="platform-tag">Discovery Plus</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-credits">
+                    <p>&copy; 2024 Telugu Anime Database (TADB). Made with passion for Telugu anime fans.</p>
+                    <p class="credits-text">
+                        <span>🎨 Design & Development:</span>
+                        <span class="credit-name">TADB Team</span> |
+                        <span>🎌 Anime Data:</span>
+                        <span class="credit-name">Community Contributors</span> |
+                        <span>🎭 Voice Artists Info:</span>
+                        <span class="credit-name">Telugu Dubbing Studios</span>
+                    </p>
+                    <div class="detailed-credits">
+                        <div class="credit-section">
+                            <h4>🏗️ Platform Development</h4>
+                            <p><span class="credit-name">Frontend:</span> HTML5, CSS3, JavaScript ES6+</p>
+                            <p><span class="credit-name">Design System:</span> Custom TADB Theme with #133978 Primary Color</p>
+                            <p><span class="credit-name">Responsive Framework:</span> Mobile-First CSS Grid & Flexbox</p>
+                        </div>
+                        <div class="credit-section">
+                            <h4>📊 Data Sources</h4>
+                            <p><span class="credit-name">Anime Information:</span> MyAnimeList, AniList, Crunchyroll</p>
+                            <p><span class="credit-name">Voice Artists:</span> Telugu Dubbing Studios & Community</p>
+                            <p><span class="credit-name">Schedule Data:</span> Official Broadcasting Networks</p>
+                        </div>
+                        <div class="credit-section">
+                            <h4>🎯 Content Creators</h4>
+                            <p><span class="credit-name">TADB Founder:</span> Telugu Anime Database Team</p>
+                            <p><span class="credit-name">Telchi Anime:</span> Content Creator & Reviewer</p>
+                            <p><span class="credit-name">Community Contributors:</span> Professor, Rae & Others</p>
+                        </div>
+                        <div class="credit-section">
+                            <h4>📺 Streaming Partners</h4>
+                            <p><span class="credit-name">Official Platforms:</span> Crunchyroll, Netflix, JioHotstar</p>
+                            <p><span class="credit-name">TV Channels:</span> Sony YAY, Cartoon Network, ETV Plus</p>
+                            <p><span class="credit-name">Regional:</span> Anime Times, Discovery Plus</p>
+                        </div>
+                        <div class="credit-section">
+                            <h4>🙏 Special Thanks</h4>
+                            <p><span class="credit-name">Telugu Anime Community:</span> For continuous support and feedback</p>
+                            <p><span class="credit-name">Voice Artists:</span> For bringing anime to life in Telugu</p>
+                            <p><span class="credit-name">Dubbing Studios:</span> For quality Telugu adaptations</p>
+                            <p><span class="credit-name">Anime Creators:</span> Original manga artists and animation studios</p>
+                        </div>
+                        <div class="credit-section">
+                            <h4>⚖️ Legal & Compliance</h4>
+                            <p><span class="credit-name">Content Policy:</span> All anime content belongs to respective owners</p>
+                            <p><span class="credit-name">Fair Use:</span> Educational and informational purposes only</p>
+                            <p><span class="credit-name">DMCA Compliance:</span> Respecting intellectual property rights</p>
+                        </div>
+                    </div>
+                    <div class="footer-disclaimer">
+                        <p><strong>Disclaimer:</strong> TADB is a fan-made platform for Telugu anime enthusiasts. We do not host, distribute, or claim ownership of any anime content. All anime series, movies, and related materials are the property of their respective creators, studios, and distributors. This website serves as an informational database and community platform to promote Telugu dubbed anime content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

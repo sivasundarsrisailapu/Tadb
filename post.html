@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Details - Telugu Anime Database (TADB)</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='35' cy='35' r='25' fill='none' stroke='%234a90e2' stroke-width='6'/%3E%3Cpath d='M55 55 L75 75' stroke='%234a90e2' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="post-styles.css">
+    <link rel="stylesheet" href="simple-trailers.css">
+    <link rel="stylesheet" href="theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="back-btn" onclick="history.back()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <div class="nav-brand">
+                <h2><a href="index.html" style="color: #133978; text-decoration: none;">TADB</a></h2>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+    <!-- Main Content -->
+    <main class="post-main">
+        <!-- Hero Section -->
+        <section class="post-hero">
+            <div class="hero-background">
+                <img id="heroImage" src="" alt="Anime Background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content-wrapper">
+                <div class="container">
+                    <div class="post-hero-content">
+                        <div class="anime-poster">
+                            <img id="animePoster" src="" alt="Anime Poster">
+
+                        </div>
+                        <div class="anime-details">
+                            <h1 id="animeTitle">Loading...</h1>
+                            <div class="anime-meta">
+                                <div class="anime-meta-line">
+                                    <span id="animeYear" class="meta-item"></span>
+                                    <span id="animeDuration" class="meta-item"></span>
+                                </div>
+                                <div class="anime-meta-line">
+                                    <span id="animeRating" class="rating-badge"></span>
+                                    <span id="animeViews" class="meta-item views-count">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor"
+                                                stroke-width="2" />
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                                        </svg>
+                                        <span class="views-number">Loading...</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="anime-genres" id="animeGenres">
+                                <!-- Genres will be populated by JavaScript -->
+                            </div>
+                            <div class="anime-actions">
+                                <button class="btn-primary watch-btn">▶ Watch Now</button>
+
+                                <button class="btn-icon favorite-btn">❤️</button>
+                                <button class="btn-icon share-btn">📤</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Synopsis Section -->
+        <section class="synopsis-section">
+            <div class="container">
+                <h2>Synopsis</h2>
+                <p id="animeSynopsis">Loading synopsis...</p>
+            </div>
+        </section>
+
+        <!-- Content Navigation Tabs -->
+        <section class="content-tabs-section">
+            <div class="container">
+                <div class="content-tabs">
+                    <button class="tab-btn active" data-tab="details">
+                        <span class="tab-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="tab-text">Details</span>
+                    </button>
+                    <button class="tab-btn" data-tab="cast">
+                        <span class="tab-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="tab-text">Cast & Crew</span>
+                    </button>
+                    <button class="tab-btn" data-tab="platforms">
+                        <span class="tab-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="tab-text">Platforms</span>
+                    </button>
+                    <button class="tab-btn" data-tab="trailers">
+                        <span class="tab-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="5,3 19,12 5,21" fill="currentColor" />
+                            </svg>
+                        </span>
+                        <span class="tab-text">Trailers</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab Content Sections -->
+        <div class="tab-content-wrapper">
+            <!-- Details Tab Content -->
+            <section class="tab-content active" id="details-content">
+                <div class="details-section">
+                    <div class="container">
+                        <h2>Details</h2>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <h4>Status</h4>
+                                <p>Completed</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Studio</h4>
+                                <p>Studio Pierrot</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Source</h4>
+                                <p>Manga</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Aired</h4>
+                                <p>Oct 2002 - Feb 2007</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Duration</h4>
+                                <p id="detailsDuration">23 min per episode</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Rating</h4>
+                                <p>PG-13 - Teens 13 or older</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Score</h4>
+                                <p id="detailsScore">8.5/10</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Popularity</h4>
+                                <p>#5 Most Popular</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cast Tab Content -->
+            <section class="tab-content" id="cast-content">
+                <div class="cast-section">
+                    <div class="container">
+                        <!-- Characters Section -->
+                        <div class="characters-section">
+                            <div class="section-header">
+                                <h2>Characters</h2>
+
+                            </div>
+                            <div class="characters-grid">
+                                <div class="character-voice-card">
+                                    <div class="character-side">
+                                        <img src="https://i.pinimg.com/736x/f3/42/f6/f342f653dba19f073e53882b1e0c1599.jpg"
+                                            alt="Naruto Uzumaki" class="character-image">
+                                        <div class="character-info">
+                                            <h4 class="character-name">Naruto Uzumaki</h4>
+                                            <p class="character-role">Main</p>
+                                        </div>
+                                    </div>
+                                    <div class="voice-actor-side">
+                                        <div class="voice-actor-info">
+                                            <h4 class="voice-actor-name">Rajesh Kumar</h4>
+                                            <p class="voice-actor-language">Telugu</p>
+                                        </div>
+                                        <img src="https://i.pinimg.com/736x/f3/42/f6/f342f653dba19f073e53882b1e0c1599.jpg"
+                                            alt="Rajesh Kumar" class="voice-actor-image">
+                                    </div>
+                                </div>
+
+                                <div class="character-voice-card">
+                                    <div class="character-side">
+                                        <img src="https://via.placeholder.com/120x180/ff69b4/ffffff?text=Sakura"
+                                            alt="Sakura Haruno" class="character-image">
+                                        <div class="character-info">
+                                            <h4 class="character-name">Sakura Haruno</h4>
+                                            <p class="character-role">Main</p>
+                                        </div>
+                                    </div>
+                                    <div class="voice-actor-side">
+                                        <div class="voice-actor-info">
+                                            <h4 class="voice-actor-name">Priya Sharma</h4>
+                                            <p class="voice-actor-language">Telugu</p>
+                                        </div>
+                                        <img src="https://via.placeholder.com/120x180/4a90e2/ffffff?text=VA2"
+                                            alt="Priya Sharma" class="voice-actor-image">
+                                    </div>
+                                </div>
+
+                                <div class="character-voice-card">
+                                    <div class="character-side">
+                                        <img src="https://via.placeholder.com/120x180/333333/ffffff?text=Sasuke"
+                                            alt="Sasuke Uchiha" class="character-image">
+                                        <div class="character-info">
+                                            <h4 class="character-name">Sasuke Uchiha</h4>
+                                            <p class="character-role">Main</p>
+                                        </div>
+                                    </div>
+                                    <div class="voice-actor-side">
+                                        <div class="voice-actor-info">
+                                            <h4 class="voice-actor-name">Suresh Babu</h4>
+                                            <p class="voice-actor-language">Telugu</p>
+                                        </div>
+                                        <img src="https://via.placeholder.com/120x180/4a90e2/ffffff?text=VA3"
+                                            alt="Suresh Babu" class="voice-actor-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Crew Section -->
+                        <div class="crew-section">
+                            <div class="section-header">
+                                <h2>Crew</h2>
+                                <a href="#" class="see-all">View 8+ more</a>
+                            </div>
+                            <div class="crew-grid">
+                                <div class="crew-member-card">
+                                    <div class="crew-member-info">
+                                        <h4>Venkat Reddy</h4>
+                                        <p class="crew-role">Telugu Dubbing Director</p>
+                                        <p class="crew-description">Oversees the Telugu adaptation and voice direction
+                                        </p>
+                                    </div>
+                                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyXVjuNuTprgxfgwFEce5XZqMsOTclTUC74E8HzaW93zOvLYijNaNZkil64BDCQIMQ732j0Lj7cg-qndjKcNTcktxf9dlJWNucoQjmN3nE7hnOpAV4zpYSpbAaljGzv_n_Qw5GxrOfQW7l7_upGV4kXKc8_nvZGQhKIvAa7irgwmlu0dNE2HYNKpYepHA/s320/461490151_1029915929144824_4029279726736384201_n.jpg"
+                                        alt="Director">
+                                </div>
+                                <div class="crew-member-card">
+                                    <div class="crew-member-info">
+                                        <h4>Lakshmi Devi</h4>
+                                        <p class="crew-role">Script Adapter</p>
+                                        <p class="crew-description">Adapts the script for Telugu audience</p>
+                                    </div>
+                                    <img src="https://via.placeholder.com/120x120/45b7d1/ffffff?text=SA"
+                                        alt="Script Adapter">
+                                </div>
+                                <div class="crew-member-card">
+                                    <div class="crew-member-info">
+                                        <h4>Ravi Kumar</h4>
+                                        <p class="crew-role">Sound Engineer</p>
+                                        <p class="crew-description">Manages audio quality and sound mixing</p>
+                                    </div>
+                                    <img src="https://via.placeholder.com/120x120/45b7d1/ffffff?text=SE"
+                                        alt="Sound Engineer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Platforms Tab Content -->
+            <section class="tab-content" id="platforms-content">
+                <div class="platforms-section">
+                    <div class="container">
+                        <h2>Available Platforms</h2>
+                        <div class="platforms-grid">
+                            <div class="platform-card">
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTckJnLpsp3SoNccFGqQ7inO2QurfH-lc86OHGXpKL5XjsyCrV9pzthlUDWGXMzKhFFgoI64H4KLKqQ1MQyYgLfP7io2ISNWLLZB-kvUub99dJW8gXhZT74Gvhx4GGnSApzKdcYvcTdbjtcwmNpDeMbtoezXipIrHEZY6BshZh5JA4LfZHfJxZmP07aBg/s1600/Sony_Yay_new_logo.png"
+                                    alt="Netflix">
+                                <div class="platform-info">
+                                    <h4>Netflix</h4>
+                                    <p>Streaming Available</p>
+                                    <span class="platform-status available">Available</span>
+                                </div>
+                            </div>
+                            <div class="platform-card">
+                                <img src="https://via.placeholder.com/80x80/00d4ff/ffffff?text=CR" alt="Crunchyroll">
+                                <div class="platform-info">
+                                    <h4>Crunchyroll</h4>
+                                    <p>Premium Required</p>
+                                    <span class="platform-status premium">Premium</span>
+                                </div>
+                            </div>
+                            <div class="platform-card">
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaaVdxiOfX0bLocUurVkCUjmy38rKm83qhwWJXlvWnevTNwBC8y8zP7aePxP8dUjqsqltBmupbazuf3bWSbjYuh2PVcqKE0NVQF3LpQ1Fmx9VS8zjbnsXxElllRHQmZ9vEvPPs7rXI2acOZc0qju_VR05hhMM1jbdR3p1eTG7QLVDVhMPy5d7tNfFpdAk/s16000/step_illus2-(1).png"
+                                    alt="Funimation">
+                                <div class="platform-info">
+                                    <h4>Funimation</h4>
+                                    <p>Not Available</p>
+                                    <span class="platform-status unavailable">Unavailable</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trailers Tab Content -->
+            <section class="tab-content" id="trailers-content">
+                <div class="trailers-section">
+                    <div class="container">
+                        <h2>Trailers & Videos</h2>
+
+                        <!-- Main Video Player -->
+                        <div class="main-video-player">
+                            <div class="video-container">
+                                <iframe id="mainTrailer" src="https://www.youtube.com/embed/QhBnZ6NPOY0"
+                                    title="Naruto Official Trailer" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 id="currentVideoTitle">Official Trailer</h3>
+                                <p>Click on any video below to watch</p>
+                            </div>
+                        </div>
+
+                        <!-- Video List -->
+                        <div class="video-list">
+                            <div class="video-item active" onclick="changeVideo('QhBnZ6NPOY0', 'Official Trailer')">
+                                <div class="video-thumbnail">
+                                    <img src="https://img.youtube.com/vi/QhBnZ6NPOY0/mqdefault.jpg"
+                                        alt="Official Trailer">
+                                    <div class="play-button">▶</div>
+                                </div>
+                                <div class="video-details">
+                                    <h4>Official Trailer</h4>
+                                    <p>2:30 • 1.2M views</p>
+                                </div>
+                            </div>
+
+                            <div class="video-item" onclick="changeVideo('1dy2zPPrKD0', 'Telugu Dub Preview')">
+                                <div class="video-thumbnail">
+                                    <img src="https://img.youtube.com/vi/1dy2zPPrKD0/mqdefault.jpg"
+                                        alt="Telugu Dub Preview">
+                                    <div class="play-button">▶</div>
+                                </div>
+                                <div class="video-details">
+                                    <h4>Telugu Dub Preview</h4>
+                                    <p>1:45 • 850K views</p>
+                                </div>
+                            </div>
+
+                            <div class="video-item" onclick="changeVideo('fhfgWvQuDwE', 'Behind the Scenes')">
+                                <div class="video-thumbnail">
+                                    <img src="https://img.youtube.com/vi/fhfgWvQuDwE/mqdefault.jpg"
+                                        alt="Behind the Scenes">
+                                    <div class="play-button">▶</div>
+                                </div>
+                                <div class="video-details">
+                                    <h4>Behind the Scenes</h4>
+                                    <p>3:15 • 650K views</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-credits">
+                <p>&copy; 2024 Telugu Anime Database (TADB). Made with ❤️ for Telugu anime fans.</p>
+                <p class="footer-note">All anime content belongs to their respective creators and studios. TADB is a fan
+                    community platform.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+    <script src="post-script.js"></script>
+</body>
+
+</html>
